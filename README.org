@@ -1,0 +1,26 @@
+Keyboard layout switcher for StumpWM
+
+** Nothing to see here
+This is a fork of [[https://github.com/stumpwm/stumpwm-contrib/tree/master/util/kbd-layouts][this]] for my personal use only. Please refer to the actual thing for the actual thing. Also the license is the same probably or whatever… 
+
+** Usage
+Add 
+#+begin_src lisp
+(load-module "kbd-layouts")
+#+end_src
+to =.stumpwmrc= 
+
+You can specify your keyboard layouts using the function
+=KEYBOARD-LAYOUT-LIST=. Layouts are represented by strings identical to
+those used by setxkbmap, e.g.:
+#+begin_src lisp
+(keyboard-layout-list "us" "pl" "ru -variant phonetic")
+#+end_src
+You can also specify the behavior of the CapsLock key using
+variable =*CAPS-LOCK-BEHAVIOR*=. Available are the following values:
+- =:normal= - CapsLock serves as CapsLock
+- =:ctrl= - CapsLock serves as additional Ctrl
+- =:swapped= - CapsLock and Ctrl are swapped
+By default the command =SWITCH-KEYBOARD-LAYOUT= is bound to the key
+combination =s-SPC= (=WinKey-Space=).
+
